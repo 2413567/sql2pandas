@@ -35,7 +35,7 @@ def save_data_to_files(connection, table_info):
         column_comments = [column['comment'] if column['comment'] else column['name'] for column in columns]
 
         # 查询表数据
-        query = f"SELECT * FROM {table}"
+        query = sqlalchemy.text(f"SELECT * FROM {table}")
         data = pd.read_sql(sql=query, con=connection)
         # 重命名列名为注释
         data.columns = column_comments
