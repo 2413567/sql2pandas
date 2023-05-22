@@ -24,7 +24,9 @@ pip install pandas sqlalchemy pymysql openpyxl
 connection = sqlalchemy.create_engine('mysql+pymysql://root:root@host/data?charset=utf8').connect()
 ```
 3. 运行脚本：
+```
 python export_tables.py
+```
 4. 在当前目录下，会生成两个文件夹：数据 和 数据1。数据 文件夹中包含pkl文件，数据1 文件夹中包含Excel文件。
 ## 注意事项
 - 确保已安装所需的库。
