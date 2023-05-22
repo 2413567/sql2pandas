@@ -17,11 +17,11 @@
 1. 安装所需的库：
 
 ```bash
-pip install pandas sqlalchemy pymysql openpyxl```
+pip install pandas sqlalchemy pymysql openpyxl
+```
 2. 修改脚本中的数据库连接信息：
 ```
 connection = sqlalchemy.create_engine('mysql+pymysql://root:root@host/data?charset=utf8').connect()
-
 ```
 3. 运行脚本：
 python export_tables.py
