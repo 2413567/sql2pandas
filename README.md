@@ -26,7 +26,7 @@ connection = sqlalchemy.create_engine('mysql+pymysql://root:root@host/data?chars
 3. 运行脚本：
 python export_tables.py
 4. 在当前目录下，会生成两个文件夹：数据 和 数据1。数据 文件夹中包含pkl文件，数据1 文件夹中包含Excel文件。
-注意事项
+## 注意事项
 - 确保已安装所需的库。
 - 根据实际情况修改数据库连接信息。
 - 在运行脚本之前，确保当前目录下不存在名为数据和数据1的文件夹，以免覆盖现有数据。
