@@ -2,9 +2,11 @@ import os
 import pandas as pd
 import sqlalchemy
 
+
 # 连接到数据库
 def connect_to_database(connection_str):
-    return sqlalchemy.create_engine(connection_strconnect()
+    return sqlalchemy.create_engine(connection_str).connect()
+
 
 # 获取数据库中的表和列信息
 def get_tables_and_columns(connection):
@@ -19,6 +21,7 @@ def get_tables_and_columns(connection):
             'comment': table_comment['text'] if table_comment['text'] else table
         }
     return table_info
+
 
 # 将数据保存到文件
 def save_data_to_files(connection, table_info):
@@ -43,6 +46,7 @@ def save_data_to_files(connection, table_info):
         data.head().astype('str').to_excel(os.path.join('数据1', f"{filename}.xlsx"), index=False)
         print(filename)
 
+
 def main():
     # 数据库连接字符串
     db_connection_str = 'mysql+pymysql://root:root@host/databases?charset=utf8'
@@ -54,6 +58,7 @@ def main():
     save_data_to_files(connection, table_info)
     # 关闭数据库连接
     connection.close()
+
 
 if __name__ == '__main__':
     main()
